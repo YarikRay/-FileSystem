@@ -154,7 +154,15 @@ public:
                     }
 
                     size_t pos = file.name.find_last_of('.');
-                    file.extension = (pos != wstring::npos) ? file.name.substr(pos) : L"";
+                    if (pos != string::npos)
+                    {
+                        file.extension = file.name.substr(pos);
+                    }
+                    else
+                    {
+                        file.extension = L"None";
+                    }
+                    
                     info.push_back(file);
                 }
             } while (FindNextFileW(hFind, &ffd));
