@@ -129,7 +129,7 @@ public:
                     continue;
                 }
 
-                wstring full_path = current_path + L"\\" + ffd.cFileName;
+                wstring full_path =     
                 file_info file;
 
                 if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
@@ -181,7 +181,7 @@ int main() {
     setlocale(LC_ALL, "RU");
 
     // Для тестирования лучше использовать конкретную папку, а не весь диск C:
-    Directory_It<file_info> it(L"D:\\");  // Пример: обход только папки Windows
+    Directory_It<file_info> it(L"C:\\Windows\\");  // Пример: обход только папки Windows
 
     HWND consoleWindow = GetConsoleWindow();
     ShowWindow(consoleWindow, SW_MAXIMIZE);
